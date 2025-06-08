@@ -8,8 +8,12 @@ st.title("Social Listening Dashboard")
 
 with st.sidebar:
     st.header("Settings")
-    subreddit = st.text_input("Subreddit Name", placeholder="search...")
+    
+    st.subheader("Reddit", divider = "grey")
+    subreddit = st.text_input("Subreddit Name", placeholder = "search...")
     limit = st.slider("Number of Posts", min_value = 1, max_value = 10, value = 5)
+    
+    st.subheader("YouTube", divider = "grey")
 
 if subreddit.strip():
     with st.spinner("Fetching posts from Reddit..."):
