@@ -6,13 +6,11 @@ from app.crawlers import reddit
 st.set_page_config(page_title = "Social Listening Dashboard", layout = "wide")
 st.title("Social Listening Dashboard")
 
-# Sidebar inputs
 with st.sidebar:
     st.header("Settings")
     subreddit = st.text_input("Subreddit Name", placeholder="search...")
     limit = st.slider("Number of Posts", min_value = 1, max_value = 10, value = 5)
 
-# Fetch posts
 if subreddit.strip():
     with st.spinner("Fetching posts from Reddit..."):
         try:
